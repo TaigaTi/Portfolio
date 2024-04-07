@@ -1,17 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { Box } from '@mui/material';
 import reportWebVitals from './reportWebVitals';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home></Home>,
+  },
+  {
+    path: "/projects",
+    element: <Projects></Projects>,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <div className="bg-primary-black">
-      <App />
-    </div>
+    <Box className="bg-primary-black" sx={{ height: '100vh' }}>
+      <RouterProvider router={router} />
+      {/* <App /> */}
+    </Box>
   </React.StrictMode>
 );
 

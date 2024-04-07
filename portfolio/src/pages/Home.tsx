@@ -3,16 +3,16 @@ import Layout from '../components/Layout';
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
 import headshot from '../assets/images/headshot.png';
-
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
         <>
-            <Box className="text-white" sx={{height: '100vh'}}>
+            <Box className="text-white">
                 <Layout />
 
                 <Box className="flex items-center" sx={{ height: 500 }}>
-                    <Box className="justify-center" sx={{ width: '75%',padding: 15 }}>
+                    <Box className="justify-center" sx={{ width: '75%', padding: 15 }}>
                         <Typography
                             variant="h1"
                             sx={{
@@ -33,16 +33,18 @@ export default function Home() {
                             diverse projects.
                         </Typography>
 
-                        <Button
-                            sx={{
-                                border: '2px solid #D1B79D',
-                                borderRadius: 20,
-                                textTransform: 'none',
-                                color: '#D1B79D',
-                                paddingX: 5,
-                            }}>
-                            Explore Projects
-                        </Button>
+                        <Link to="/projects">
+                            <Button
+                                sx={{
+                                    border: '2px solid #D1B79D',
+                                    borderRadius: 20,
+                                    textTransform: 'none',
+                                    color: '#D1B79D',
+                                    paddingX: 5,
+                                }}>
+                                Explore Projects
+                            </Button>
+                        </Link>
                     </Box>
                     <Box className="p-6 w-1/2 justify-center">
                         <img src={headshot} alt='' width={380} height={380}></img>
